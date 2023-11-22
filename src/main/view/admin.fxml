@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.AdminController">
+   <children>
+      <HBox alignment="CENTER_LEFT" layoutX="120.0" prefHeight="50.0" prefWidth="685.0" style="-fx-background-color: #b22828;">
+         <children>
+            <Text fx:id="username" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="#admin" wrappingWidth="484.08984375">
+               <HBox.margin>
+                  <Insets left="16.0" right="16.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#logoutButtonPressed" prefHeight="35.0" prefWidth="114.0" text="Đăng xuất">
+               <HBox.margin>
+                  <Insets right="16.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <VBox layoutY="132.0" prefHeight="368.0" prefWidth="120.0" style="-fx-background-color: ECF4D6;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="132.0">
+         <children>
+            <Button fx:id="viewCourseButton" mnemonicParsing="false" onAction="#viewCourseButtonPressed" prefHeight="35.0" prefWidth="116.0" text="Xem khóa học">
+               <VBox.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="8.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="createCourseButton" mnemonicParsing="false" onAction="#createCourseButtonPressed" prefHeight="35.0" prefWidth="116.0" text="Tạo khóa học">
+               <VBox.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="deleteCourseButton" mnemonicParsing="false" onAction="#deleteCourseButtonPressed" prefHeight="35.0" prefWidth="116.0" text="Xóa khóa học">
+               <VBox.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="editCourseButton" mnemonicParsing="false" onAction="#editCourseButtonPressed" prefHeight="35.0" prefWidth="116.0" text="Chỉnh sửa khóa học">
+               <VBox.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </VBox.margin>
+            </Button>
+            <AnchorPane prefHeight="162.0" prefWidth="120.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </AnchorPane>
+         </children>
+      </VBox>
+      <AnchorPane fx:id="viewCoursePane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: ECF4D6;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+         <children>
+            <TableView fx:id="viewCourseTableView" layoutX="247.0" layoutY="71.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="createCoursePane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: ECF4D6;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+         <children>
+            <VBox layoutX="48.0" layoutY="24.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ID" wrappingWidth="232.0">
+                     <VBox.margin>
+                        <Insets bottom="12.0" left="48.0" top="24.0" />
+                     </VBox.margin>
+                  </Text>
+                  <TextField fx:id="courseIdCreate">
+                     <VBox.margin>
+                        <Insets left="48.0" right="280.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name" wrappingWidth="230.13671875">
+                     <VBox.margin>
+                        <Insets bottom="12.0" left="48.0" top="24.0" />
+                     </VBox.margin>
+                  </Text>
+                  <TextField fx:id="courseNameCreate">
+                     <VBox.margin>
+                        <Insets left="48.0" right="280.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Credit">
+                     <VBox.margin>
+                        <Insets bottom="12.0" left="48.0" top="24.0" />
+                     </VBox.margin>
+                  </Text>
+                  <TextField fx:id="courseCreditCreate">
+                     <VBox.margin>
+                        <Insets left="48.0" right="280.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Max Student">
+                     <VBox.margin>
+                        <Insets bottom="12.0" left="48.0" top="24.0" />
+                     </VBox.margin>
+                  </Text>
+                  <TextField fx:id="courseMaxStudentCreate">
+                     <VBox.margin>
+                        <Insets left="48.0" right="280.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="152.0" layoutY="24.0" mnemonicParsing="false" onAction="#saveCreatePressed" prefHeight="32.0" prefWidth="100.0" text="Save" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="24.0" />
+                        <Button layoutX="300.0" layoutY="21.0" mnemonicParsing="false" onAction="#cancelCreatePressed" prefHeight="32.0" prefWidth="100.0" text="Cancel" AnchorPane.rightAnchor="280.0" AnchorPane.topAnchor="24.0" />
+                        <Text fx:id="saveCompletedCreate" fill="#dc8686" strokeType="OUTSIDE" strokeWidth="0.0" text="Save Completed!" AnchorPane.leftAnchor="48.0" AnchorPane.topAnchor="24.0" />
+                        <Text fx:id="saveFailedCreate" fill="#dc8686" strokeType="OUTSIDE" strokeWidth="0.0" text="Save Failed!" AnchorPane.leftAnchor="48.0" AnchorPane.topAnchor="24.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="deleteCoursePane" layoutX="386.0" layoutY="135.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: ECF4D6;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+         <children>
+            <Text layoutX="40.0" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Course ID" wrappingWidth="104.0" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="340.0" />
+            <TextField fx:id="courseIdDelete" layoutX="40.0" layoutY="373.0" prefHeight="25.0" prefWidth="250.0" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="368.0" />
+            <Button layoutX="314.0" layoutY="368.0" mnemonicParsing="false" onAction="#deleteCoursePressed" text="Delete" AnchorPane.leftAnchor="320.0" AnchorPane.rightAnchor="280.0" AnchorPane.topAnchor="368.0" />
+            <TableView fx:id="viewCourseTableDelete" layoutX="260.0" layoutY="53.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="140.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <Text fx:id="deleteCompleted" fill="#dc8686" strokeType="OUTSIDE" strokeWidth="0.0" text="Delete Completed!" AnchorPane.leftAnchor="320.0" AnchorPane.topAnchor="400.0" />
+            <Text fx:id="deleteFailed" fill="#dc8686" strokeType="OUTSIDE" strokeWidth="0.0" text="Detele Failed!" AnchorPane.leftAnchor="320.0" AnchorPane.topAnchor="400.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="editCoursePane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: ECF4D6;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+         <children>
+            <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mã Sinh Viên" wrappingWidth="232.0">
+                     <VBox.margin>
+                        <Insets bottom="12.0" left="48.0" top="24.0" />
+                     </VBox.margin>
+                  </Text>
+                  <TextField fx:id="courseIdEdit">
+                     <VBox.margin>
+                        <Insets left="48.0" right="280.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Họ và tên" wrappingWidth="230.13671875">
+                     <VBox.margin>
+                        <Insets bottom="12.0" left="48.0" top="24.0" />
+                     </VBox.margin>
+                  </Text>
+                  <TextField fx:id="courseNameEdit">
+                     <VBox.margin>
+                        <Insets left="48.0" right="280.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Số tín chỉ" wrappingWidth="87.984375">
+                     <VBox.margin>
+                        <Insets bottom="12.0" left="48.0" top="24.0" />
+                     </VBox.margin>
+                  </Text>
+                  <TextField fx:id="courseCreditEdit">
+                     <VBox.margin>
+                        <Insets left="48.0" right="280.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Số học sinh">
+                     <VBox.margin>
+                        <Insets bottom="12.0" left="48.0" top="24.0" />
+                     </VBox.margin>
+                  </Text>
+                  <TextField fx:id="courseMaxStudentEdit">
+                     <VBox.margin>
+                        <Insets left="48.0" right="280.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="172.0" layoutY="24.0" mnemonicParsing="false" onAction="#saveEditPressed" prefHeight="32.0" prefWidth="100.0" text="Lưu" AnchorPane.leftAnchor="174.0" AnchorPane.topAnchor="24.0" />
+                        <Button layoutX="300.0" layoutY="21.0" mnemonicParsing="false" onAction="#cancelEditPressed" prefHeight="32.0" prefWidth="100.0" text="Hủy bỏ" AnchorPane.rightAnchor="280.0" AnchorPane.topAnchor="24.0" />
+                        <Button layoutX="50.0" layoutY="31.0" mnemonicParsing="false" onAction="#searchEditPressed" prefHeight="32.0" prefWidth="100.0" text="Tìm kiếm" AnchorPane.leftAnchor="48.0" AnchorPane.topAnchor="24.0" />
+                        <Text fx:id="searchFound" fill="#dc8686" strokeType="OUTSIDE" strokeWidth="0.0" text="Đã tìm thấy!" AnchorPane.leftAnchor="48.0" AnchorPane.topAnchor="60.0" />
+                        <Text fx:id="searchNotFound" fill="#dc8686" strokeType="OUTSIDE" strokeWidth="0.0" text="Không tìm thấy!" AnchorPane.leftAnchor="48.0" AnchorPane.topAnchor="60.0" />
+                        <Text fx:id="saveCompletedEdit" fill="#dc8686" layoutX="48.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lưu thành công!" AnchorPane.leftAnchor="48.0" AnchorPane.topAnchor="62.05078125" />
+                        <Text fx:id="saveFailedEdit" fill="#dc8686" layoutX="48.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lưu không thành công!" AnchorPane.leftAnchor="48.0" AnchorPane.topAnchor="62.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+            <ImageView fitHeight="450.0" fitWidth="596.0" layoutX="125.0" opacity="0.28" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/image/screenshot20231122__2_-removebg-preview.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="136.0" fitWidth="149.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/image/screenshot20231122__2_-removebg-preview.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
